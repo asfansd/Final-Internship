@@ -1,0 +1,62 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	<script src="global.js"></script>
+	<script src="controller.js"></script>
+	<script src="route.js"></script>
+	<title> Login </title>
+	<style>
+		table 
+		{
+			box-shadow: 3px 3px 3px lightblue;
+		}
+	</style>
+</head>
+<body style="background-size:cover ;background-repeat: no-repeat;" background="./Images/bg2.jpg">
+<br>
+<h1 align="center">MULTIMEDIA</h1>
+<table align="center" width="35%" style="background:rgba(255,255,255,0.3);border-radius:15px; border:3px blue">
+
+<tr>
+	<td>
+	<form method="get" action="" align="center">
+	<div ng-app="loginApp" ng-controller="loginCtrl">
+		<br>
+		<br>
+		<img width="160" height="150" src="./Images/icon.png"/>
+		<br>
+		<br>
+		Username : <input type="text" ng-model="username"><br><br>
+		Password : <input type="password" ng-model="password"><br><br>
+		<button ng-click="check()" style="box-shadow: 3px 3px 3px lightblue; background-color: #4CAF50; border: none; color: white; padding: 12px 27px; text-align: center; font-size: 16px;">Login !</button>
+		<br>
+		<br>
+		<h4> Hello <span ng-bind="username"></span> </h4>
+		<br>
+			
+		<br>
+	</div>
+	</form>
+	</td>
+</tr>
+</table>
+
+
+<div  ng-app="myApp2">
+<br>
+<br>
+<table align="center">
+<tr>
+	<td align="center">
+	<br>
+	<a href="#!Signup"><span style="font-size:25px;"> SignUp! </span></a>
+	<br>
+		
+	<br>
+	</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

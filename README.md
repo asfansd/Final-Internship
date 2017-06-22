@@ -1,2 +1,2 @@
-# Final-Internship
-Final
+# Internship
+Internship Project

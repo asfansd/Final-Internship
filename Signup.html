@@ -1,0 +1,118 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script src="global.js"></script>
+<script src="signup.js"></script>
+<script src="route.js"></script>
+<link rel="stylesheet" href="captchacode.css">
+<head>
+	<title> SignUp </title>
+	<style>
+		table 
+		{
+			box-shadow: 3px 3px 3px lightblue;
+		 }
+	</style>
+</head>
+<body style="background-size:cover ;background-repeat: no-repeat;" background="./Images/bg2.jpg">
+<br>
+<h2 align="center">CREATE AN ACCOUNT NOW!</h2>
+<table align="center" width="40%" style="background:rgba(255,255,255,0.3);border-radius:15px; border:3px blue">
+
+<tr>
+	<td>
+<div ng-app="signupApp" ng-controller="signupCtrl">
+	<form name="form" action="Login.html" onsubmit="return checkform(this);" role="form" method="get" align="center">
+	
+	<br>
+	<br>
+<div class="form-group" ng-class="{ 'has-error': form.name.$dirty && form.name.$error.required }">
+	Name : <input type="text" ng-model="name"><br><br><br>
+</div>
+<div class="form-group" ng-class="{ 'has-error': form.emailid.$dirty && form.emailid.$error.required }">
+	Email ID : <input type="text" ng-model="email"><br><br><br>
+</div>
+<div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+	Username : <input type="text" ng-model="username"><br><br>
+	<h4> Welcome to MultiMedia <span ng-bind="username"></span> </h4>
+	<br>
+</div>
+<div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+	Password : <input type="password" ng-model="password"><br><br><br>
+</div>
+	<!-- START CAPTCHA -->
+	<br>
+	<div class="capbox">
+
+	<div id="CaptchaDiv"></div>
+
+	<div class="capbox-inner">
+	Type the above number:<br>
+
+	<input type="hidden" id="txtCaptcha">
+	<input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
+		
+	</div>
+	</div>
+	<br><br><br>
+	<!-- END CAPTCHA -->
+
+	<button type="submit" ng-click="check()" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary" style="background-color: #4CAF50; border: none; color: white; padding: 12px 27px; text-align: center; font-size: 16px;"> SignUp! </button>
+	<br>
+	
+	<br>
+	</form>
+</div>
+<script type="text/javascript">
+
+// Captcha Script
+
+function checkform(theform){
+var why = "";
+
+if(theform.CaptchaInput.value == ""){
+why += "- Please Enter CAPTCHA Code.\n";
+}
+if(theform.CaptchaInput.value != ""){
+if(ValidCaptcha(theform.CaptchaInput.value) == false){
+why += "The CAPTCHA Code Does Not Match.\n";
+}
+}
+if(why != ""){
+alert(why);
+return false;
+}
+}
+
+var a = Math.ceil(Math.random() * 9)+ '';
+var b = Math.ceil(Math.random() * 9)+ '';
+var c = Math.ceil(Math.random() * 9)+ '';
+var d = Math.ceil(Math.random() * 9)+ '';
+var e = Math.ceil(Math.random() * 9)+ '';
+
+var code = a + b + c + d + e;
+document.getElementById("txtCaptcha").value = code;
+document.getElementById("CaptchaDiv").innerHTML = code;
+
+// Validate input against the generated number
+function ValidCaptcha(){
+var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
+if (str1 == str2){
+return true;
+}else{
+return false;
+}
+}
+
+// Remove the spaces from the entered and generated code
+function removeSpaces(string){
+return string.split(' ').join('');
+}
+</script>
+
+	</td>
+</tr>
+</table>
+</body>
+</html>

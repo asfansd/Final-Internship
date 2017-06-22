@@ -1,0 +1,551 @@
+<html><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+	<title>Main </title>
+	<style>
+    	
+    .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+        
+
+        
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+        width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+        
+        
+        
+        
+        ul 
+		{ 
+			display:table; 
+			margin:0 auto;
+		}
+		table 
+		{
+			box-shadow: 3px 3px 3px lightblue;
+		}
+	
+		
+		body {font-family: "Lato", sans-serif;}
+
+		/* Style the tab */
+		div.tab 
+		{
+    			overflow: hidden;
+    			border: 1px solid #ccc;
+			border-radius:15 px;
+    			background-color: #f1f1f1;
+		}
+
+		/* Style the buttons inside the tab */
+		div.tab button 
+		{
+    			background-color: inherit;
+    			//float: left;
+    			border: none;
+			border-radius:15 px;
+    			outline: none;
+    			cursor: pointer;
+    			padding: 14px 16px;
+    			transition: 0.3s;
+    			font-size: 17px;
+		}
+
+		/* Change background color of buttons on hover */
+		div.tab button:hover
+		{
+    			background-color: #ddd;
+		}
+
+		/* Create an active/current tablink class */
+		div.tab button.active 
+		{
+    			background-color: #ccc;
+		}
+
+		/* Style the tab content */
+		.tabcontent 
+		{
+    			display: none;
+    			padding: 6px 12px;
+    			-webkit-animation: fadeEffect 1s;
+   			animation: fadeEffect 1s;
+		}
+
+		/* Fade in tabs */
+		@-webkit-keyframes fadeEffect 
+		{
+    			from {opacity: 0;}
+    			to {opacity: 1;}
+		}
+
+		@keyframes fadeEffect 
+		{
+    			from {opacity: 0;}
+    			to {opacity: 1;}
+		}
+
+		.fileContainer 
+		{
+    			//overflow: hidden;
+    			position: relative;
+		}
+
+		.fileContainer [type=file] 
+		{
+    			cursor: inherit;
+    			//display: block;
+    			filter: alpha(opacity=0);
+    			min-height: 100%;
+    			min-width: 100%;
+    			opacity: 0;
+    			position: absolute;
+    			right: 0;
+    			text-align: right;
+    			top: 0;
+		}
+
+/* Example stylistic flourishes */
+
+.fileContainer {
+    
+    float: center;
+    padding: .5em;
+}
+
+.fileContainer [type=file] {
+    cursor: pointer;
+}
+}
+	</style>
+</head>
+<body style="background-size:cover ;background-repeat: no-repeat;" background="https://github.com/sushmithajogula/Internship/blob/master/Images/bg2.jpg?raw=true">
+<img src="https://static1.squarespace.com/static/53e40a7ee4b0e9902e0baa6a/54ed2231e4b0a0f14fa7e3ce/54ed2234e4b0c01a6f3bc37a/1424826943033/MULTIMEDIA-logo.png?format=300w" height="120px" align="left" width="150px">
+<br>
+<br>
+<br>
+<br>
+<table style="background:rgba(255,255,255,0.3);border-radius:15px; border:3px lightblue;" align="center" bgcolor="#cce6ff" width="98%">
+	
+	<tbody><tr>
+	<td align="center"><a href=""><img src="https://github.com/sushmithajogula/Internship/blob/master/Images/icon.png?raw=true" height="60px" width="60px"></a></td>
+	<td align="center" width="65%">Name</td>
+
+        <td align="center"><img src="https://github.com/sushmithajogula/Internship/blob/master/Images/My.png?raw=true" height="25px" width="25px" onclick="myFunction()" class="dropbtn">
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">My Profile</a>
+    <a href="#about">Change Password</a>
+    <a href="#contact">Logout</a>
+  </div>
+</td>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+            
+	<td align="center"><img src="https://github.com/sushmithajogula/Internship/blob/master/Images/Help.jpeg?raw=true" height="25px" width="25px" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+<div id="id01" class="modal">
+    <form class="modal-content animate" action="">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <p>Question</p>
+    </div>
+ </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+        
+</td>        
+    
+</tr>
+</tbody></table>
+<br><table frame="box" rules="none" style="background:rgba(255,255,255,0.3);border-radius:15px; border:3px lightblue;" align="left" border="1" width="17%">
+
+<tbody><tr>
+	<td> </td>
+</tr>
+<tr>
+	<td> </td>
+</tr>
+<tr>
+	<td> </td>
+</tr>
+<tr>
+	<td> </td>
+</tr>
+<tr>
+	<th><h3>Dashboard</h3></th>
+</tr>
+<tr>	
+	<td align="center"><a href="">Images</a></td>
+	
+</tr>
+<tr>
+	<td align="center"><a href="">Audio</a></td>
+	
+</tr>
+<tr>
+	<td align="center">Files</td>
+</tr>
+<tr>
+	<td align="center">
+		<ul align="left">
+			<li align="left"><a href="">Docs</a></li>
+			<li align="left"><a href="">Text</a></li>
+		</ul>
+	</td>
+</tr>
+
+<tr>
+	<td> </td>
+</tr>
+<tr>
+	<td> </td>
+</tr>
+<tr>
+	<td> </td>
+</tr>
+<tr>
+	<td> </td>
+</tr>
+<tr>
+	<td> </td>
+</tr>
+<tr>
+	<td> </td>
+</tr>
+<tr>
+	<td> </td>
+</tr>
+<tr>
+	<th><h3>Shared</h3></th>
+</tr>
+<tr>	
+	<td align="center"><a href="">Images</a></td>
+	
+</tr>
+<tr>
+	<td align="center"><a href="">Audio</a></td>
+	
+</tr>
+<tr>
+	<td align="center">Files</td>
+</tr>
+<tr>
+	<td align="center">
+		<ul align="left">
+			<li align="left"><a href="">Docs</a></li>
+			<li align="left"><a href="">Text</a></li>
+		</ul>
+	</td>
+</tr>
+<tr>
+	<td> </td>
+</tr>
+<tr>
+	<td> </td>
+</tr>
+<tr>
+	<td> </td>
+</tr>
+<tr>
+	<td> </td>
+</tr>
+<tr>
+	<td> </td>
+</tr>
+</tbody></table>
+<table frame="box" rules="none" style="background:rgba(255,255,255,0.3);border-radius:15px; border:3px lightblue;" height="61%" align="center" border="1" width="75%">
+	<tbody><tr>
+		<td align="center" valign="top">
+		<div class="tab">
+  			<button class="tablinks" style="padding: 17px 229px;float:left" onclick="openCity(event, 'London')">My</button>
+  			<button class="tablinks" style="padding: 17px 229px;float:right" onclick="openCity(event, 'Paris')" id="defaultOpen">Upload</button>
+  		</div>
+
+		<div id="London" class="tabcontent">
+  			<br>
+			<h3 align="center">My Files</h3><br>
+			<table align="center" height="50%" width="50%" border="0">
+                <tr align="center" cellspacing="30px">
+                <td align="center" cellspacing="30px"><a href="C:\Users\sushmithaj\Desktop\Inventory"><img src="https://github.com/sushmithajogula/Internship/blob/master/Images/Text.png?raw=true" height="70px" width="70px" /></a></td>
+  			    <td align="center" cellspacing="30px"><a href="C:\Users\sushmithaj\Desktop\Inventory"><img src="https://github.com/sushmithajogula/Internship/blob/master/Images/Js.png?raw=true" height="70px" width="70px" /></a><td>
+                <td align="center" cellspacing="30px"><a href="C:\Users\sushmithaj\Desktop\Inventory\Audio.png"><img src="https://github.com/sushmithajogula/Internship/blob/master/Images/Image.png?raw=true" height="70px" width="70px" /></a></td>
+                <td align="center" cellspacing="30px"><a href="C:\Users\sushmithaj\Desktop\Inventory"><img src="https://github.com/sushmithajogula/Internship/blob/master/Images/Audio.png?raw=true" height="70px" width="70px" /></a></td>
+                <tr>
+            </table>
+        </div>
+
+		<div id="Paris" class="tabcontent">
+  			<br>
+			<h3 align="center">Upload your files.</h3>
+  			</br>
+			<form align="center" action="http://192.168.0.103:8087/fileupload" method="post" enctype="multipart/form-data"><br>
+				<label class="fileContainer">
+   					<img src="https://github.com/sushmithajogula/Internship/blob/master/Images/Browse.png?raw=true" height="60px" width="60px"/>
+				<input type="file" name="filetoupload"><br><br><br>
+				</label>
+				<button type="submit" style="float: center; box-shadow: 3px 3px 3px lightblue; background-color: #1a53ff; border: none; color: white; padding: 8px 20px; text-align: center; font-size: 16px;">Upload</button>
+			     <br>
+                 <p>File Uploaded!</p>
+            </form>
+		</div>
+
+		<script>
+			function openCity(evt, cityName) 
+			{
+   				 var i, tabcontent, tablinks;
+    				tabcontent = document.getElementsByClassName("tabcontent");
+    				for (i = 0; i < tabcontent.length; i++) 
+				{
+        				tabcontent[i].style.display = "none";
+    				}
+    				tablinks = document.getElementsByClassName("tablinks");
+    				for (i = 0; i < tablinks.length; i++) 
+				{
+        				tablinks[i].className = tablinks[i].className.replace(" active", "");
+    				}
+    				document.getElementById(cityName).style.display = "block";
+    				evt.currentTarget.className += " active";
+			}
+            document.getElementById("defaultOpen").click();
+		</script>
+		</td>
+	</tr>
+<div></div><div></div></tbody></table>
+<br>
+<button type="button" align="left" style="float: left; box-shadow: 3px 3px 3px lightblue; background-color: #4CAF50; border: none; color: white; padding: 10px 24px; text-align: center; font-size: 16px;" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Contact Us</button>
+<div id="id02" class="modal">
+    <form class="modal-content animate" action="">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+        <div class="container">
+  <form action="/action_page.php">
+
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+        
+ </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id02');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<button type="button" align="center" style=" float: right; box-shadow: 3px 3px 3px lightblue; background-color: #4CAF50; border: none; color: white; padding: 10px 24px; text-align: center; font-size: 16px;" onclick="document.getElementById('id03').style.display='block'" style="width:auto;">About Us</button>
+<div id="id03" class="modal">
+    <form class="modal-content animate" action="">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container">
+      <p>Question</p>
+    </div>
+ </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id03');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<br>
+<br>
+
+</body></html>
