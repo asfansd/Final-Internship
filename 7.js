@@ -1,9 +1,9 @@
-﻿//include http, fs and url module
+//include http, fs and url module
 var http = require('http'),
     fs = require('fs'),
     path = require('path'),
     url = require('url');
-    imageDir = 'C:/Users/Ozone/Desktop/Inventory/Images/';
+    imageDir = 'C:/Users/asfansajid/Desktop/Inventory/Images/';
  
 //create http server listening on port 3333
 http.createServer(function (req, res) {
@@ -54,7 +54,7 @@ function getImages(imageDir, callback) {
     var fileType = '.jpg',
         files = [], i;
     fs.readdir(imageDir, function (err, list) {
-        for(i=0; i<list.length; i++) {
+        for(var i=0; i<list.length; i++) {
             if(path.extname(list[i]) === fileType) {
                 files.push(list[i]); //store the file name into the array files
             }

@@ -15,10 +15,11 @@ http.createServer(function (req, res) {
             break;
       }
       type=temp.substr(i+1,j-1);
-      if(type=="gif"||type=="jpg"||type=="ico"||type=="jpeg"||type=="png")
+      console.log(type);
+        if(type=="gif"||type=="jpg"||type=="ico"||type=="jpeg"||type=="png")
       {  
         var oldpath = files.filetoupload.path;
-        var newpath = 'C:/Users/Ozone/Desktop/Inventory/Images/' + files.filetoupload.name;
+        var newpath = 'C:/Users/asfansajid/Desktop/Inventory/Images/' + files.filetoupload.name;
         fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
         });
@@ -26,7 +27,7 @@ http.createServer(function (req, res) {
       else if(type=="html"||type=="txt"||type=="doc"||type=="pdf"||type=="docx")
       {  
         var oldpath = files.filetoupload.path;
-        var newpath = 'C:/Users/Ozone/Desktop/Inventory/Text/' + files.filetoupload.name;
+        var newpath = 'C:/Users/asfansajid/Desktop/Inventory/Text/' + files.filetoupload.name;
         fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
         });
@@ -34,15 +35,17 @@ http.createServer(function (req, res) {
       else if(type=="js"||type=="json")
       {  
         var oldpath = files.filetoupload.path;
-        var newpath = 'C:/Users/Ozone/Desktop/Inventory/Js/' + files.filetoupload.name;
+        var newpath = 'C:/Users/asfansajid/Desktop/Inventory/Js/' + files.filetoupload.name;
         fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
         });
       }
-      else if(type=="mp3"||type=="wav"/*||type=="ico"||type=="jpeg"||type=="png"*/)
+      
+      else if(type=="mp3"||type=="wav")/*||type=="ico"||type=="jpeg"||type=="png"*/
       {  
+        console.log(type);
         var oldpath = files.filetoupload.path;
-        var newpath = 'C:/Users/Ozone/Desktop/Inventory/Audio/' + files.filetoupload.name;
+        var newpath = 'C:/Users/asfansajid/Desktop/Inventory/Audio/' + files.filetoupload.name;
         fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
         });
